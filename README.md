@@ -68,4 +68,47 @@ GROUP BY title
 ORDER BY COUNT(title) DESC;
 ```
 
+<img src="https://user-images.githubusercontent.com/29410712/186964316-8e6fa234-f03a-428c-9431-ce176245eb14.png"  width=50% height=50%>
 
++ Looking at the numbers in the table we see that 24% of the employees of the company are about to retire. This is a high percentage of individuals retiring and would require Pewlett Hackard to hire many new employees. 
++ Additionally, around 50% of all retirees are engineers and 71% are holding senior positions.
+
+## The Number of Employees Eligible for the Mentorship Program
+
+Given the vast number of employees departing and the skillsets they possess, the firm decides to select a group of employees born in 1965 (i.e., they are 10 years younger than the retirees) and turn them into trainers for new hires and coworkers who will be promoted to fill future openings. The management at Pewlett Hackard wants to be prepared for this development, known as the "Silver Tsunami" by designating some of the retirees as mentors to train the future generation of workers who would run Pewlett Hackard's operations and day-to-day activities.
+
+We created a table that holds all of the employees who were eligible for the mentorship program and we stored in the `mentorship_eligibility.csv`. 
+
+```
+SELECT DISTINCT ON (e.emp_no) e.emp_no,
+e.first_name,
+e.last_name,
+e.birth_date,
+dep.from_date,
+dep.to_date,
+ti.title
+INTO mentorship_eligibilty
+FROM employees as e
+INNER JOIN dept_emp as dep
+ON (e.emp_no = dep.emp_no)
+INNER JOIN titles as ti
+ON (e.emp_no = ti.emp_no)
+WHERE (dep.to_date = ('9999-01-01')) 
+AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+ORDER BY e.emp_no;
+```
+
++ There are 1549 employees eligible for the mentorship program.
++ With 72458 retirees needing replacement, there would be about 46 employees per trainer. 
+
+As a result, Pewlett Hackard would need to increase the number of trainers to make the program effective.
+
+## Summary
+
+### How many roles will need to be filled as the "silver tsunami" begins to make an impact?
+
+As stated before, Pewlett Hackard would need to increase the number of trainers to make the program effective. Currently, there are 1549 employees eligible for the mentorship program and 72458 retirees needing replacement. This would result in about 46 employees per trainer. The company would need about 4.5 times more trainers to effectively have "silver tsunami" create an impact.
+
+### Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
+
+There are not enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees. Each mentor would need to train about 46 new employees. Depending on how many employees each mentor can train, Pewlett Hackard would need to increase the amount of mentors to make the program effective.
