@@ -68,7 +68,7 @@ GROUP BY title
 ORDER BY COUNT(title) DESC;
 ```
 
-![Screenshot (321)](https://user-images.githubusercontent.com/29410712/192976173-ba0c4e39-191b-49a7-b9ea-c6a7b8e9496c.png){: .size}
+<img src="https://user-images.githubusercontent.com/29410712/192976173-ba0c4e39-191b-49a7-b9ea-c6a7b8e9496c.png"  width=50% height=50%>
 
 + Looking at the numbers in the table we see that 24% of the employees of the company are about to retire. This is a high percentage of individuals retiring and would require Pewlett Hackard to hire many new employees. 
 + Additionally, around 50% of all retirees are engineers and 71% are holding senior positions.
