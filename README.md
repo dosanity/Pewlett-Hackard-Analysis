@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Pewlett-Hackard (PH) is a large firm that currently employs 300,024 individuals. Many employees are approaching retirement age, which will result in a significant number of job openings in the organization. We will be conducting a database analysis for Pewlett Hackard with detailed information on the number of future retirees from all departments currently working at the company to be able to prepare a plan to hire new staff and also to prepare a mentorship initiative. 
+Pewlett-Packard (PH) is a large firm that currently employs 300,024 individuals. Many employees are approaching retirement age, which will result in a significant number of job openings in the organization. We will be conducting a database analysis for Pewlett Hackard with detailed information on the number of future retirees from all departments currently working at the company to be able to prepare a plan to hire new staff and also to prepare a mentorship initiative. 
 
 The goal of this study is to construct a list of employees approaching retirement age using Pewlett-Packard employee data. Employees born between January 1, 1952, and December 31, 1955 are included on the list. The company's management must be aware of the overall number of retirees, as well as the department in which they work and their title.
 
@@ -47,7 +47,7 @@ ON (e.emp_no = ti.emp_no)
 WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 ORDER BY e.emp_no ASC;
 ```
-Next we created a table to hold all the current titles of employees who were born between Jaunary 1, 1952 and December 31, 1955 which is stored in the `unique_titles.csv`. 
+Next, we created a table to hold all the current titles of employees who were born between Jaunary 1, 1952 and December 31, 1955 which is stored in the `unique_titles.csv`. 
 
 ```
 SELECT DISTINCT ON (emp_no) emp_no,
@@ -59,7 +59,7 @@ FROM retirement_titles
 WHERE (to_date = ('9999-01-01'))
 ORDER BY emp_no, to_date DESC;
 ```
-Finally we counted the number of retiring individuals by their current titles which is stored in the `retiring_titles.csv`.
+Finally, we counted the number of retiring individuals by their current titles which are stored in the `retiring_titles.csv`.
 ```
 SELECT COUNT(title), title
 INTO retiring_titles
@@ -68,7 +68,7 @@ GROUP BY title
 ORDER BY COUNT(title) DESC;
 ```
 
-<img src="https://user-images.githubusercontent.com/29410712/186964316-8e6fa234-f03a-428c-9431-ce176245eb14.png"  width=50% height=50%>
+![Screenshot (321)](https://user-images.githubusercontent.com/29410712/192976173-ba0c4e39-191b-49a7-b9ea-c6a7b8e9496c.png){: .size}
 
 + Looking at the numbers in the table we see that 24% of the employees of the company are about to retire. This is a high percentage of individuals retiring and would require Pewlett Hackard to hire many new employees. 
 + Additionally, around 50% of all retirees are engineers and 71% are holding senior positions.
@@ -111,4 +111,4 @@ As stated before, Pewlett Hackard would need to increase the number of trainers 
 
 ### Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
 
-There are not enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees. Each mentor would need to train about 46 new employees. Depending on how many employees each mentor can train, Pewlett Hackard would need to increase the amount of mentors to make the program effective.
+There are not enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees. Each mentor would need to train about 46 new employees. Depending on how many employees each mentor can train, Pewlett Hackard would need to increase the number of mentors to make the program effective.
