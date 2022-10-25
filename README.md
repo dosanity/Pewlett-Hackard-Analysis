@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Pewlett-Packard (PH) is a large firm that currently employs 300,024 individuals. Many employees are approaching retirement age, which will result in a significant number of job openings in the organization. We will be conducting a database analysis for Pewlett Hackard with detailed information on the number of future retirees from all departments currently working at the company to be able to prepare a plan to hire new staff and also to prepare a mentorship initiative. 
+Pewlett-Hackard (PH) is a large firm that currently employs 300,024 individuals. Many employees are approaching retirement age, which will result in a significant number of job openings in the organization. We will be conducting a database analysis for Pewlett Hackard with detailed information on the number of future retirees from all departments currently working at the company to be able to prepare a plan to hire new staff and also to prepare a mentorship initiative. 
 
 The goal of this study is to construct a list of employees approaching retirement age using Pewlett-Packard employee data. Employees born between January 1, 1952, and December 31, 1955 are included on the list. The company's management must be aware of the overall number of retirees, as well as the department in which they work and their title.
 
